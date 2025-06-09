@@ -1,0 +1,311 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff0f5;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+header {
+  background: #d4343a; /* üst menü kırmızısı */
+  box-shadow: 0 2px 5px rgba(212, 52, 58, 0.4);
+  padding: 15px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #ff7a7a;
+}
+
+.welcome-message {
+  width: 100vw;
+  text-align: center;
+  margin: 25px 0;
+  color: #a85d7a;
+  font-size: 2rem;
+}
+
+
+
+.welcome-message p {
+  font-size: 0.9rem;
+  color: #b56582;
+  margin-top: 5px;
+}
+
+/* Eğer welcome-message içinde resim varsa, alta alır */
+.welcome-message img {
+  display: block;
+  margin-top: 15px;
+  max-width: 100%;
+  height: auto;
+}
+
+.main-section {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  padding-bottom: 80px;
+  align-items: stretch;
+}
+
+.slider-wrapper {
+  flex: 2;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff0f5;
+  box-shadow: 0 2px 8px rgba(212, 52, 58, 0.2);
+  padding: 15px;
+  height: 370px;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  display: flex;
+  width: calc(340px * 6); /* 6 kampanya */
+  animation: slide 30s linear infinite;
+}
+
+.campaign-box {
+  min-width: 340px;
+  height: 370px;
+  margin-right: 20px;
+  background: #d4343a; /* kampanya kırmızısı */
+  border-radius: 10px;
+  flex-shrink: 0;
+  user-select: none;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(212, 52, 58, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.campaign-box img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px 10px 0 0;
+  display: block;
+  flex-shrink: 0;
+}
+
+.campaign-text {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff0f5;
+  background-color: #a82a30;
+  border-radius: 0 0 10px 10px;
+  user-select: none;
+  box-shadow: inset 0 1px 3px rgba(212, 52, 58, 0.2);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50%));
+  }
+}
+
+.form-box {
+  flex: 1;
+  background: #fff0f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(212, 52, 58, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 470px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #a82a30;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d4343a;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: #d4343a;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+  background-color: #a82a30;
+}
+
+footer {
+  background: #d4343a; /* alt menü kırmızısı */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-media a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.social-media a.facebook {
+  background-color: #3b5998;
+}
+
+.social-media a.facebook:hover {
+  background-color: #2d4373;
+}
+
+.social-media a.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-media a.instagram:hover {
+  opacity: 0.85;
+}
+
+.social-media a.whatsapp {
+  background-color: #25d366;
+}
+
+.social-media a.whatsapp:hover {
+  background-color: #1ebe57;
+}
+
+.social-media svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+@media (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+    padding-bottom: 40px;
+  }
+
+  .slider-wrapper,
+  .form-box {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .campaign-box {
+    min-width: 100%;
+    height: auto;
+    margin-right: 0;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .campaign-box img {
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .campaign-text {
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.9rem;
+    color: #fff0f5;
+    background-color: #a82a30;
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 1px 3px rgba(212, 52, 58, 0.2);
+  }
+
+  .slider {
+    width: calc(100% * 6);
+    animation: slide 30s linear infinite;
+  }
+}
+.chat-button {
+  font-size: 1.2rem; /* İstersen büyüt */
+  font-weight: bold; /* İstersen kalın yap */
+  padding: 8px 12px; /* Dilersen biraz iç boşluk ekle */
+  color: white; /* Yazı rengi */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.chat-button:hover {
+  color: #ff7a7a; /* Hoverda renk değişimi */
+}
