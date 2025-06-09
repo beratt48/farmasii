@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  background: #d4343a; /* üst menü kırmızısı */
+  background: #d4343a;
   box-shadow: 0 2px 5px rgba(212, 52, 58, 0.4);
   padding: 15px 0;
 }
@@ -67,7 +67,6 @@ header {
   margin-top: 5px;
 }
 
-/* Eğer welcome-message içinde resim varsa, alta alır */
 .welcome-message img {
   display: block;
   margin-top: 15px;
@@ -97,7 +96,7 @@ header {
 
 .slider {
   display: flex;
-  width: calc(340px * 6); /* 6 kampanya */
+  width: calc(340px * 6);
   animation: slide 30s linear infinite;
 }
 
@@ -105,12 +104,11 @@ header {
   min-width: 340px;
   height: 370px;
   margin-right: 20px;
-  background: #d4343a; /* kampanya kırmızısı */
+  background: #fff;
   border-radius: 10px;
   flex-shrink: 0;
-  user-select: none;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(212, 52, 58, 0.4);
+  box-shadow: 0 2px 5px rgba(212, 52, 58, 0.2);
   display: flex;
   flex-direction: column;
 }
@@ -118,34 +116,13 @@ header {
 .campaign-box img {
   width: 100%;
   height: 330px;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;        /* Resim kutuya sığar, kesilmez */
+  background-color: #fff0f5;  /* Arka plan boş kalırsa belli olmasın */
   border-radius: 10px 10px 0 0;
   display: block;
   flex-shrink: 0;
 }
 
-.campaign-text {
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1rem;
-  color: #fff0f5;
-  background-color: #a82a30;
-  border-radius: 0 0 10px 10px;
-  user-select: none;
-  box-shadow: inset 0 1px 3px rgba(212, 52, 58, 0.2);
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-50%));
-  }
-}
 
 .form-box {
   flex: 1;
@@ -197,7 +174,7 @@ header {
 }
 
 footer {
-  background: #d4343a; /* alt menü kırmızısı */
+  background: #d4343a;
   color: #fff;
   padding: 20px 0;
   text-align: center;
@@ -228,31 +205,46 @@ footer {
 .social-media a.facebook {
   background-color: #3b5998;
 }
-
 .social-media a.facebook:hover {
   background-color: #2d4373;
 }
-
 .social-media a.instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
-
 .social-media a.instagram:hover {
   opacity: 0.85;
 }
-
 .social-media a.whatsapp {
   background-color: #25d366;
 }
-
 .social-media a.whatsapp:hover {
   background-color: #1ebe57;
 }
-
 .social-media svg {
   width: 20px;
   height: 20px;
   fill: white;
+}
+
+.chat-button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 8px 12px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.chat-button:hover {
+  color: #ff7a7a;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50%));
+  }
 }
 
 @media (max-width: 768px) {
@@ -267,53 +259,23 @@ footer {
     margin-bottom: 20px;
   }
 
-  .slider {
-    display: flex;
-    animation: slide 30s linear infinite;
-    width: max-content;
-  }
-
   .campaign-box {
-    width: 80vw; /* ekran genişliğinin %80'i */
-    aspect-ratio: 1 / 1; /* kare */
-    margin-right: 15px;
-    border-radius: 10px;
-    flex-shrink: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    min-width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 15px;
   }
 
   .campaign-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .campaign-text {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 30px;
-    line-height: 30px;
-    font-size: 0.9rem;
-    background-color: rgba(168, 42, 48, 0.9);
-    color: #fff;
-    text-align: center;
-    border-radius: 0 0 10px 10px;
-  }
+  height: 200px;
+  object-fit: contain;
+  background-color: #fff0f5;
+  border-radius: 10px 10px 0 0;
 }
 
 
-.chat-button {
-  font-size: 1.2rem; /* İstersen büyüt */
-  font-weight: bold; /* İstersen kalın yap */
-  padding: 8px 12px; /* Dilersen biraz iç boşluk ekle */
-  color: white; /* Yazı rengi */
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.chat-button:hover {
-  color: #ff7a7a; /* Hoverda renk değişimi */
+  .slider {
+    width: calc(100% * 6);
+    animation: slide 30s linear infinite;
+  }
 }
