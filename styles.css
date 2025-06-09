@@ -259,32 +259,28 @@ footer {
     margin-bottom: 20px;
   }
 
-  .slider-wrapper {
-    overflow-x: auto; /* Yatay kaydırma aktif */
-    -webkit-overflow-scrolling: touch; /* iOS için kaydırma */
-  }
-
   .slider {
-    width: calc(100% * 6);
-    animation: none; /* Animasyonu kapat */
-    display: flex;
-    scroll-snap-type: x mandatory; /* Kaydırma yakalama */
+    width: 100%;
+    animation: slide 30s linear infinite;
+    overflow-x: auto;  /* Kaydırılabilir yap */
   }
 
   .campaign-box {
-    min-width: 100%;
+    min-width: 280px;  /* Daha dar */
+    max-width: 90vw;   /* Ekranın %90'ından büyük olmasın */
     height: auto;
-    margin-right: 0;
-    margin-bottom: 15px;
-    scroll-snap-align: start; /* Kaydırma hizalama */
+    margin: 0 auto 15px auto;
   }
 
   .campaign-box img {
-    height: 200px;
+    height: 180px;     /* Foto boyutunu küçült */
+    width: 100%;
     object-fit: contain;
     background-color: #fff0f5;
     border-radius: 10px 10px 0 0;
+    display: block;
   }
 }
+
 
 
