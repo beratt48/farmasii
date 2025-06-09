@@ -61,8 +61,6 @@ header {
   font-size: 2rem;
 }
 
-
-
 .welcome-message p {
   font-size: 0.9rem;
   color: #b56582;
@@ -265,21 +263,23 @@ footer {
 
   .slider-wrapper,
   .form-box {
-    height: auto;
+    height: auto !important;
     margin-bottom: 20px;
   }
 
   .campaign-box {
-    min-width: 100%;
-    height: auto;
-    margin-right: 0;
+    min-width: 100% !important;
+    height: auto !important;
+    margin-right: 0 !important;
     border-radius: 10px;
     margin-bottom: 15px;
   }
 
   .campaign-box img {
-    height: 200px;
+    width: 100% !important;
+    height: auto !important;
     border-radius: 10px 10px 0 0;
+    object-fit: cover;
   }
 
   .campaign-text {
@@ -293,10 +293,11 @@ footer {
   }
 
   .slider {
-    width: calc(100% * 6);
-    animation: slide 30s linear infinite;
+    width: 100% !important;
+    animation: none !important;
   }
 }
+
 .chat-button {
   font-size: 1.2rem; /* İstersen büyüt */
   font-weight: bold; /* İstersen kalın yap */
