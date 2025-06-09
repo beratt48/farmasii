@@ -263,38 +263,42 @@ footer {
 
   .slider-wrapper,
   .form-box {
-    height: auto !important;
+    height: auto;
     margin-bottom: 20px;
   }
 
+  .slider {
+    width: calc(300px * 6); /* 6 görsel, her biri 300px genişlikte */
+    animation: slide 30s linear infinite;
+  }
+
   .campaign-box {
-    min-width: 100% !important;
-    height: auto !important;
-    margin-right: 0 !important;
+    min-width: 300px;
+    height: 300px; /* kare yapmak için yüksekliği genişlikle eşitledik */
+    margin-right: 20px;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .campaign-box img {
-    width: 100% !important;
-    height: auto !important;
+    width: 100%;
+    height: 100%; /* yükseklik genişlikle eşit */
+    object-fit: cover; /* görselin kırpılarak tam dolmasını sağlar */
     border-radius: 10px 10px 0 0;
-    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
   }
 
   .campaign-text {
-    height: 30px;
-    line-height: 30px;
-    font-size: 0.9rem;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1rem;
     color: #fff0f5;
     background-color: #a82a30;
     border-radius: 0 0 10px 10px;
     box-shadow: inset 0 1px 3px rgba(212, 52, 58, 0.2);
-  }
-
-  .slider {
-    width: 100% !important;
-    animation: none !important;
   }
 }
 
